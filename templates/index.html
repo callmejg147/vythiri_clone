@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Vythiri Resort Official Website Resorts in wayanad|Hotels in wayanad|Best Honeymoon Resorts|Eco resort in wayanad</title>
+        <link rel="stylesheet" href="./templates/links.css">
+
+        <style>
+            body, html{
+                height: 100%;
+                
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                cursor: url('/static/images/pointer.png')0 0,auto;
+                width:100vw;
+            }
+    
+            .footer {
+                background-image: url('/static/images/footer-bg.jpg');
+                text-align: center;
+                padding-top: 50px;
+
+            }
+            .back2 {
+                background-image: url('/static/images/content-bg.jpg'); 
+                position: absolute;
+                padding-top: 40px;
+                padding-bottom:0px;
+                margin-top: 700px;
+                z-index:999;
+
+            }
+            .navbar {
+                
+                background-image: url('/static/images/bar.jpeg');
+                position: absolute;
+                color: rgb(254,255,177);
+                width: 100%;
+                display: inline-flex;
+                padding-top:950px;
+                padding-bottom:30px;         
+                
+            }
+            .navbar img {
+                
+                height: 65px;
+                width: 65px;
+                display: inline-flex;
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 35px;
+
+            }
+            .block1 {
+                white-space: nowrap;
+                display: inline-flex
+            }
+            .block1 img:hover {
+                opacity: 0.6;
+                background-color: green;
+            }
+            .logo {
+                display:-webkit-inline-flex; 
+            }
+            .logo img{
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                display: inline-block;
+                margin: 10px;
+                opacity: 0.4
+        
+            }
+            .logo img:hover{
+                opacity: 0.6;
+                background-color: grey;
+            }
+            .footer {
+                width: 100vw;
+                position: absolute;
+                background-image: url('/static/images/footer-bg.jpg');
+                position: relative;
+                
+                
+                color: #d1d8b4;
+                 
+            }
+            .footer_logos {
+                background-color: rgba(30, 63, 28, 0.6);
+                color: rgb(254,255,177);
+                text-align: center;
+                padding-top: 0px;
+                padding-bottom: 20px;
+                background-size:cover;
+                
+            }
+            .footer_logos img{
+                height: 35px;
+                width: 35px;
+                border-radius: 50%;
+                display: inline-flex;
+                margin: 5px;
+                opacity: 0.6;
+
+                
+            }
+            .sticky + .header2 {
+                padding-top: 102px;
+            }
+            .l1:hover, l2:hover {
+                opacity: 0.8;
+            }
+
+
+            .fade-in-img {
+                position: relative;
+            }      
+            .fade-in-img img {
+                position: absolute;
+                animation-name: multiple-image-crossfade;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+                animation-duration: 8s;
+                &:nth-of-type(1) {
+                    animation-delay: 6s;
+                }
+                &:nth-of-type(2) {
+                    animation-delay:3s;
+                }
+                &:nth-of-type(3) {
+                    animation-delay: 0s;
+                }
+
+            }
+                
+
+            @keyframes multiple-image-crossfade {
+                0% {
+                    opacity:1;
+                }
+                17% {
+                    opacity:0;
+                }
+                25% {
+                    opacity:0;
+                }
+                92% {
+                    opacity:1;
+                }
+                100% {
+                    opacity:1;
+                }
+                
+        </style>
+
+    </head>
+    <body>
+        <section  style=" position:fixed;">
+            <div class="container1" style="margin-bottom: -6px;">
+                <div class="cover">
+                    <img src="/static/images/vythiri-bg.jpeg" style="width: 100vw;">
+                </div>
+            </div>
+        </section>
+        <div>
+            <img src="/static/images/rand/hanging_bridge.jpg" style="width: 100vw; z-index: 0; opacity:0">
+            <img src="/static/images/scroll_icon.png">
+        </div>
+        
+        <div class="container2" style="width:100vw">
+
+            
+            <div class="hddr"style ="background-image: url('/static/images/headder.png');background-size: 100vw 140px; padding-top: 0px; padding-bottom: 0px; word-spacing: 20px;z-index: 9999; width: 100vw; height:140px; position:sticky;top:0; display: inline-flex;left: 100px; padding-right: 0px; margin-right:0px;">
+                <div>
+                    <a><img src="/static/images/logo-vythiri.png" style="margin-left:0;padding: 0; position:relative; left:50px; top:40px; height:10vh">
+                </div>
+                <div style="display: block; position: absolute; left: 280px; top: 30px;">
+                    <div class="links" style="margin-top:-20px;font-size:14px;">
+                        <a class="l1" href="{{ dom }}/vexperiences" style="cursor: url('{{ dom }}/source/pointer.png'), auto;word-spacing: 5px; text-decoration:none; color:#d1d8b4;">VYTHIRI EXPERIENCES</a>
+                        <a class="l2" href="{{ dom }}/rainforest" style="text-decoration:none; color:#d1d8b4;cursor: url('{{ dom }}/source/pointer.png'), auto;">RAINFOREST</a>
+                        <a class="l3" href="{{ dom }}/activities" style="text-decoration:none; color:#d1d8b4;cursor: url('{{ dom }}/source/pointer.png'), auto;">ACTIVITIES</a>
+                        <a class="l4" href="{{ dom }}/gallery" style="text-decoration:none; color:#d1d8b4;cursor: url('{{ dom }}/source/pointer.png'), auto;">GALLERY</a>
+                        <a class="l5" href="{{ dom }}/tariff" style="text-decoration:none; color:#d1d8b4;cursor: url('{{ dom }}/source/pointer.png'), auto;">TARIFF</a>
+                        <a class="l6" href="{{ dom }}/packages" style="text-decoration:none; color:#d1d8b4;cursor: url('{{ dom }}/source/pointer.png'), auto;">PACKAGES</a>
+                        <a class="l7" href="{{ dom }}/specialoffers" style="word-spacing: 5px; text-decoration:none; color:#d1d8b4;cursor: url('{{ dom }}/source/pointer.png'), auto;">SPECIAL OFFERS</a>
+                        <a class="l8" href="{{ dom }}/reservation" style="word-spacing: 5px; text-decoration:none; color:#d1d8b4;cursor: url('{{ dom }}/source/pointer.png'), auto;">RESERVATION</a>
+                        <a class="l9" href="{{ dom }}/contactus" style="word-spacing: 5px; text-decoration:none; color:#d1d8b4;cursor: url('{{ dom }}/source/pointer.png'), auto;">CONTACT US</a>
+                    </div>
+                    <br>
+                    <div style="position: absolute; top:35px; left:195px; font-size:13px; ">
+                        <a class="l10" href="{{ dom }}/" style="text-decoration:none; color:#382a18;cursor: url('{{ dom }}/source/pointer.png'), auto;"><b>HOME</b></a><a> |</a> 
+                        <a class="l11" href="{{ dom }}/dwell" style="text-decoration:none; color:#382a18;cursor: url('{{ dom }}/source/pointer.png'), auto;"><b>DWELL</b></a><a> | </a>
+                        <a class="l12" href="{{ dom }}/facilities" style="text-decoration:none; color:#382a18;cursor: url('{{ dom }}/source/pointer.png'), auto;"><b>FACILITIES</b></a><a> |</a>
+                        <a class="l13" href="{{ dom }}/rejuvenate" style="text-decoration:none; color:#382a18;cursor: url('{{ dom }}/source/pointer.png'), auto;"><b>REJUVENATE</b></a><a> |</a>
+                        <a class="l14" href="{{ dom }}/guestspeaks" style="word-spacing: 2px; text-decoration:none; color:#382a18;cursor: url('{{ dom }}/source/pointer.png'), auto;"><b>GUEST SPEAKS</b></a>
+                        
+                    </div>
+                </div>
+                <div style="position: absolute; left: 85em; bottom: 2em">
+                    <a href="{{ dom }}oreg"><img src="/static/images/oreg.png"></a>
+                </div>
+            </div>
+                    
+                  
+            <div class="banner" style="z-index:1;margin-top: -30px; position:absolute;">
+                <div class="fade-in-img">
+                    <img src="/static/images/rand/hanging_bridge.jpg" style="width: 100vw; height: 100vh;">
+                    <img src="/static/images/rand/restaurant.jpg" style="width: 100vw; height: 100vh;">
+                    <img src="/static/images/rand/Poolside-View.jpg" style="width: 100vw; height: 100vh;">
+                </div>    
+            </div>     
+            
+                
+            <div class="back2">
+                <p style="font-family: fantasy; font-weight: bold; color: #2B1A17; font-size: 30px; transform: scale(1,3); text-align: center; padding-top: 20px; word-spacing: 8px;">VYTHIRI RESORTS</p>
+                <p style="color: #4A3728;margin-left: 35px; margin-right: 20px; word-spacing: 4px;">Elegant, exclusive and in its essence a state of mind, the Vythiri Resort is an exquisite jungle getaway located in Wayanad, a largely mountainous district in northern Kerala, a state in the south of India. Situated beneath an enormous canopy of a lush tropical rainforest, journey into nature's wonderland - in the company of amphibians, birds, fish, mammals, reptiles, flowering plants and butterflies that inhabit the dense Vythiri rainforest. You will be seduced by the promise of discovery, bliss and exaltation - body, mind and soul<p>
+            </div>
+                
+            <div class = "navbar" style="padding-bottom: 65px: font-size:20px; position:relative;">
+                <div style="display: inline-flex; padding-top: 25px;margin-right: 200px;margin-left:289px;margin-top: -20px;">
+                    <a href="{{ dom }}/attractivep&r"><img src="/static/images/tree.png" style="margin-top:-30px;"></a>
+                    <a href="{{ dom }}/attractivep&r" style="text-decoration:none;color: #cacaaa;opacity:1; padding-top: 20px; margin-left: 10px;">attractive packages<br>& reservation</a>
+                </div>
+                    <div style="display: inline-flex; padding-top: 40px;margin-right: 200px;margin-top: -20px;">
+                    <a href="{{ dom }}/howtogetthere"><img src="/static/images/directions.png" style="margin-top:-48px;"></a>
+                    <a href="{{ dom }}/howtogetthere" style="text-decoration:none;color: #cacaaa;opacity:1; padding-top: 0px; margin-left: 10px;">How to<br>getthere</a>
+                </div>
+                <div style="display: inline-flex; padding-top: 40px;margin-right: 200px;margin-top: -20px;">
+                    <a href="{{ dom }}/winnerIQCA"><img src="/static/images/trophy.png" style="margin-top:-42px;"></a>
+                    <a href="{{ dom }}/winnerIQCA" style="text-decoration:none;color: #cacaaa;opacity:1; padding-top: 0px; margin-left: 10px;">Winner of <br>International<br> Quality Crown Award</a>
+                </div>
+            </div>
+                
+            <div class="sec2" style="font-family: fantasy;color: #2B1A17; background-image: url('/static/images/content-bg.jpg'); text-align:center; word-spacing:255px; font-size:30px; padding-top:38px; position:relative;">
+                <a style="word-spacing:5px;">STAY WITH US</a>
+                <a>FACILITIES</a>
+                <a>REJUVENATE</a>
+                <div class="block1">
+                    <a href="{{ dom }}/dwell" style="text-decoration:none; color:#BAB86C;"><img src="/static/images/staywithus.png" style="height:380px; width:380px; border-radius:50%;" border="5">
+                    <a href="{{ dom }}/facilities" style="text-decoration:none; color:#BAB86C;"><img src="/static/images/facilities.png" style="height:380px; width:380px; border-radius:50%; margin-left:55px; margin-right:55px;" border="5"></a>
+                    <a href="{{ dom }}/rejuvenate" style="text-decoration:none; color:#BAB86C;"><img src="/static/images/rejenuate.png" border="5" style="height:380px; width:380px; border-radius:50%;" ></a> 
+                </div>
+                <p style="text-align:center; font-family:fantasy; word-spacing: 8px; font-size:15px; transform: scale(1,2); padding-bottom: 0px; padding-top: 15px;"><b>A CHECKLIST FOR YOUR VYTHIRI EXPERIENCE</b></p> 
+                <div class="logo" style="padding-top:-250px;">
+                    <img src="/static/images/jacket.png" title="BINOCULARS">
+                    <img src="/static/images/binocular.png" title="BINOCULAR">
+                    <img src="/static/images/pocketknife.png" title="POCKET KNIFE">
+                    <img src="/static/images/shoe.png" title="TREKKING SHOES">
+                    <img src="/static/images/camera.png" title="CAMERA">
+                    <img src="/static/images/flashlight.png" title="FLASH LIGHT">
+
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-content" style="line-height: 19px; font-size:small; word-spacing: 10px; background-color: rgba(30, 63, 28, 0.6); margin-top: -50px; padding: 15px;">
+                <a href="{{ dom }}/" style="text-decoration:none; color:#d1d8b4">Home</a><a>  |  </a>
+                <a href="{{ dom }}/vexperiences" style="word-spacing: 3px;text-decoration:none; color:#d1d8b4">Vythiri Experiences</a><a>  |  </a>
+                <a href="{{ dom }}/rainforest" style="text-decoration:none; color:#d1d8b4">Rainforest</a><a>  |  </a>
+                <a href="{{ dom }}/dwell" style="text-decoration:none; color:#d1d8b4">Dwell</a><a>  |  </a>
+                <a href="{{ dom }}/facilities" style="text-decoration:none; color:#d1d8b4">Facilities</a><a>  |  </a>
+                <a href="{{ dom }}/activities" style="text-decoration:none; color:#d1d8b4">Activities</a><a>  |  </a>
+                <a href="{{ dom }}/rejuvenate" style="text-decoration:none; color:#d1d8b4">Rejuvenate</a><a>  |  </a>
+                <a href="{{ dom }}/awards" style="text-decoration:none; color:#d1d8b4">Awards</a><a>  |  </a>
+                <a href="{{ dom }}/gallery" style="text-decoration:none; color:#d1d8b4">Gallery</a><a>  |  </a>
+                <a href="{{ dom }}/tariff" style="text-decoration:none; color:#d1d8b4">Tariff</a><a>  |  </a>
+                <a href="{{ dom }}/packages" style="text-decoration:none; color:#d1d8b4">Packages</a><a>  |  </a>
+                <a href="{{ dom }}/specialoffers" style="word-spacing: 2px;text-decoration:none; color:#d1d8b4" style="word-spacing: 3px;">Special Offers</a><a>  |  </a>
+                <a href="{{ dom }}/guestspeaks" style="word-spacing: 2px;text-decoration:none; color:#d1d8b4" style="word-spacing: 3px;">Guest Speaks</a><a>  |  </a>
+                <a href="{{ dom }}/booknow" style="word-spacing: 2px;text-decoration:none; color:#d1d8b4" style="word-spacing: 3px;">Book Now</a><a>  |  </a>
+                <a href="{{ dom }}/howtogetthere" style="word-spacing: 2px;text-decoration:none; color:#d1d8b4" style="word-spacing: 3px;">How to get there</a><a>  |  </a>
+                <a href="{{ dom }}/contactus" style="word-spacing: 2px;text-decoration:none; color:#d1d8b4" style="word-spacing: 3px;">Contact Us</a><a>  |  </a>
+                <a href="{{ dom }}/tandc" style="word-spacing: 2px;text-decoration:none; color:#d1d8b4" style="word-spacing: 3px;">Terms & Conditions</a><a>  |  </a>
+                <a href="{{ dom }}/privacypolicy" style="word-spacing: 2px;text-decoration:none; color:#d1d8b4" style="word-spacing: 3px;">Privacy Policy</a><a>  |  </a>
+                <a href="{{ dom }}/sitemap" style="word-spacing: 2px;text-decoration:none; color:#d1d8b4" style="word-spacing: 3px;">Site Map</a>
+            </div>
+                
+            <div  style="font-size: small; margin-bottom:0px; line-height:20px; background-color: rgba(30, 63, 28, 0.6);">
+                Copyright © 2023 vythiriresort.com. All rights reserved.
+                
+            </div>
+                
+            <div class="footer_logos" style="padding-top:0px; margin-left:auto; margin-right:auto; width 50%;">
+                <a href="https://www.facebook.com/vythiriresorts/" target="_blank"><img src="/static/images/facebook.png" width="40" height="40"></a>
+                <a href="https://www.instagram.com/vythiri_resort_official/?hl=en" target="_blank"><img src="/static/images/instagram.png"></a>
+                <a href="https://twitter.com/Vythiriresorts" target="_blank"><img src="/static/images/twitter.png" ></a>
+                <a href="https://wa.me/message/AKVGPADCUG6CJ1" target="_blank"><img src="/static/images/whatsapp.png"></a>
+            </div>
+        </div>                
+    </body>
+</html>
