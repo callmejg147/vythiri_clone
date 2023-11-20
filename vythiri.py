@@ -6,9 +6,9 @@ import sqlite3
 
 
 # flask settings
-HOSTNAME = "localhost"
-PORT = "8080"
-dom = "http://"+HOSTNAME+":"+PORT
+#HOSTNAME = "https://vythiri-clone.onrender.com"
+#PORT = "8080"
+dom = https://vythiri-clone.onrender.com
 app=Flask(__name__)
 app.debug = True
 
@@ -203,5 +203,5 @@ def viewres():
 
 
 if __name__ == "__main__" :
-    app.run(HOSTNAME, PORT)
+    app.run(HOSTNAME)
 
