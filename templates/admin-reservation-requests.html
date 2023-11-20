@@ -43,8 +43,9 @@
                 <th>E-MAIL</th>
                 <th>ROOM</th>
                 <th>NO OF ROOMS</th>
-                <th>Adults</th>
-                <th>Children</th>
+                <th>ADULTS</th>
+                <th>CHILDREN</th>
+                <th>ACTION</th>
             </tr>
             {% for row in data %}
                 <tr>
@@ -58,6 +59,10 @@
                     <td>{{ row[11] }}</td>
                     <td>{{ row[12] }}</td>
                     <td>{{ row[13] }}</td>
+                    <td>
+                        <div><button>accept</button></div>
+                        <div><button>reject</button></div>
+                    </td>
                 </tr>
             {% endfor %}
         </table>
