@@ -203,5 +203,5 @@ def viewres():
 
 
 if __name__ == "__main__" :
-    app.run(HOSTNAME)
+    app.run(dom)
 
