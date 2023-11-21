@@ -6,9 +6,9 @@ import sqlite3
 
 
 # flask settings
-#HOSTNAME = "https://vythiri-clone.onrender.com"
-#PORT = "8080"
-dom = "https://vythiri-clone.onrender.com"
+HOSTNAME = "localhost"
+PORT = "8080"
+dom = "http://"+HOSTNAME+":"+PORT
 app=Flask(__name__)
 app.debug = True
 
@@ -161,7 +161,7 @@ def resreq():
 
         cur.execute(sql, (firstname,lastname,address,country,state,city,zipcode,phnum,email,roomtype,norooms,arr,dep,noadult,nochildren))
         conn.commit()
-
+        conn.close()
         return render_template('reservation-req.html')
 
 
@@ -181,6 +181,7 @@ def admin():
         sql = ("SELECT pass FROM admins WHERE usr LIKE "+"'"+user+"'")
         cur.execute(sql)
         usrpass = cur.fetchone()[0]
+
         if pasword == usrpass:
             return render_template('admin-home.html', user=user)
         else:
@@ -188,20 +189,71 @@ def admin():
     else:
         return " wrong request method </h1>"
 
-@app.route('/admin/reservation-requests', methods=["GET"])
+@app.route('/admin/reservation-requests', methods=["GET","POST"])
 def viewres():
     conn =sqlite3.connect('reservation.db')
     cur = conn.cursor()
     sql = ("SELECT * FROM res_request")
     cur.execute(sql)
+
+
     data = cur.fetchall()
-    return render_template('admin-reservation-requests.html', data=data)
+    pending = len(data)
 
+    conn.close()
+    if len(data)<1:
+        return render_template('no-reservation.html')
+    else:
+        if request.method == "POST":
+            for row in data:
+                action = request.form.get('action')
+                if action == 'accept':
+                    conn = sqlite3.connect('reservation.db')
+                    cur = conn.cursor()
+                    q1 = ("INSERT INTO accepted_res (name, pnum, addr, rnum, email, rtype, adults, children, adate, ddate) VALUES (?,?,?,?,?,?,?,?,?,?)")
+                    cur.execute(q1,(row[1],row[8],row[3],row[11],row[9],row[10],row[14],row[15],row[12],row[13]))
+                    q2 = (f"DELETE FROM res_request WHERE email LIKE '{row[9]}'")
+                    cur.execute(q2)
+                    conn.commit()
+                    sql = ("SELECT * FROM res_request")
+                    cur.execute(sql)
+                    data = cur.fetchall()
+                    conn.close()
+                    return render_template('admin-reservation-requests.html', data=data, pending=pending)
+                elif action == 'reject':
+                    conn = sqlite3.connect('reservation.db')
+                    cur = conn.cursor()
+                    q1 = ("INSERT INTO rejected_res (name, pnum, email) VALUES (?,?,?)")
+                    cur.execute(q1, (row[1],row[8],row[9]))
+                    q2 = (f"DELETE FROM res_request WHERE email LIKE '{row[9]}'")
+                    cur.execute(q2)
+                    conn.commit()
+                    sql = ("SELECT * FROM res_request")
+                    cur.execute(sql)
+                    data = cur.fetchall()
+                    conn.close()
+                    return render_template('admin-reservation-requests.html', data=data, pending=pending)
+        return render_template('admin-reservation-requests.html', data=data, pending=pending)
 
+@app.route('/admin/view-accepted', methods=["GET"])
+def viewaccepted():
+    conn =sqlite3.connect('reservation.db')
+    cur = conn.cursor()
+    sql = ("SELECT * FROM accepted_res")
+    cur.execute(sql)
+    data = cur.fetchall()
+    conn.close()
+    return render_template('accepted.html', data=data)
 
-
-
-
+@app.route('/admin/view-rejected', methods=["GET"])
+def viewrejected():
+    conn =sqlite3.connect('reservation.db')
+    cur = conn.cursor()
+    sql = ("SELECT * FROM rejected_res")
+    cur.execute(sql)
+    data = cur.fetchall()
+    conn.close()
+    return render_template('rejected.html', data=data)
 if __name__ == "__main__" :
-    app.run()
+    app.run(HOSTNAME, PORT)
 
