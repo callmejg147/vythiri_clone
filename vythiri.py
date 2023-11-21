@@ -6,11 +6,12 @@ import sqlite3
 
 
 # flask settings
-HOSTNAME = "localhost"
-PORT = "8080"
-dom = "http://"+HOSTNAME+":"+PORT
+#HOSTNAME = "localhost"
+#PORT = "8080"
+dom = https://vythiri-clone.onrender.com
 app=Flask(__name__)
-app.debug = True
+app.debug = False
+#app.debug = True
 
 # secret key
 app.secret_key = "vythiri clone"
@@ -255,5 +256,5 @@ def viewrejected():
     conn.close()
     return render_template('rejected.html', data=data)
 if __name__ == "__main__" :
-    app.run(HOSTNAME, PORT)
+    app.run()
 
