@@ -8,7 +8,7 @@ import sqlite3
 # flask settings
 #HOSTNAME = "localhost"
 #PORT = "8080"
-dom = https://vythiri-clone.onrender.com
+dom = "https://vythiri-clone.onrender.com"
 app=Flask(__name__)
 app.debug = False
 #app.debug = True
