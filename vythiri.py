@@ -10,12 +10,11 @@ import os
 
 
 # flask settings
-#HOSTNAME = "localhost"
-#PORT = "8080"
-dom = "https://vythiri-clone.onrender.com"
+HOSTNAME = "localhost"
+PORT = "8080"
+dom = "http://"+HOSTNAME+":"+PORT
 app=Flask(__name__)
-app.debug = False
-#app.debug = True
+app.debug = True
 
 # secret key
 app.secret_key = "vythiri clone"
@@ -163,16 +162,19 @@ def resreq():
         cur = conn.cursor()
         sql = ("INSERT INTO res_request (fname,lname,addrs,country,state,city,zcode,pnum,email,rtype,rnum,arrival,departure,nadults,nchildren) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)")
 
-
         cur.execute(sql, (firstname,lastname,address,country,state,city,zipcode,phnum,email,roomtype,norooms,arr,dep,noadult,nochildren))
-        conn.commit()
-        conn.close()
+
+        sql2 = ("SELECT pwd FROM imp_pass WHERE usr LIKE 'sendmail'")
+        cur.execute(sql2)
+        pwd = cur.fetchone()[0]
 
         # sending an email to the customer
-        os.system(f"python3 send_email.py {email}")
+        os.system(f"python3 send_email.py {email} {pwd}")
 
         # send sms via sms.py
         os.system(f"python3 sms.py {phnum}")
+        conn.commit()
+        conn.close()
 
         return render_template('reservation-req.html')
 
@@ -267,5 +269,5 @@ def viewrejected():
     conn.close()
     return render_template('rejected.html', data=data)
 if __name__ == "__main__" :
-    app.run()
+    app.run(HOSTNAME, PORT)
 

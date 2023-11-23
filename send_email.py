@@ -7,7 +7,8 @@ from email.message import EmailMessage
 reciever = f"{sys.argv[1]}"
 # sending an email to the customer
 email_sender = "jithin.dev.work@gmail.com"
-password = "zooygjmlwutiryuk"
+password = f"{sys.argv[2]}"
+
 email_reciever = reciever
 
 subject = "vythiri reservation"
