@@ -10,9 +10,9 @@ import os
 
 
 # flask settings
-HOSTNAME = "localhost"
-PORT = "8080"
-dom = "http://"+HOSTNAME+":"+PORT
+#HOSTNAME = "localhost"
+#PORT = "8080"
+dom = "http://vythiri-clone.onrender.com"
 app=Flask(__name__)
 app.debug = True
 
@@ -269,5 +269,5 @@ def viewrejected():
     conn.close()
     return render_template('rejected.html', data=data)
 if __name__ == "__main__" :
-    app.run(HOSTNAME, PORT)
+    app.run()
 
