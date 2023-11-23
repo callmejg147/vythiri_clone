@@ -16,31 +16,30 @@
         margin:25%;
       }
       #admin-form {
-        text-align:justify;
+
       }
-      label {
-        margin:30px;
-      }
-      input {
-        width:250px;
-        position:relative;
-        left:50px;
-      }
+
+
     </style>
 </head>
   <body>
     <div class="login-content">
       <div>
-        <form method="POST" id="admin-form">
-          <label for="user">Username</label>
-            <input name="user" type="text"><br>
-          <label for="pass">Password</label>
-            <input name="pass" type="text">
+        <form method="POST" id="admin-form" style="">
+          <div class="input-group flex-nowrap" style="width:50%;margin:auto;">
+            <span style="background-color:rgba(255,255,255,0.3);" class="input-group-text" id="addon-wrapping">Username :</span>
+            <input style="background-color:rgba(255,255,255,0.3);" name="user" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+          </div><br>
+          <div class="input-group flex-nowrap" style="width:50%;margin:auto;">
+            <span style="background-color:rgba(255,255,255,0.3);" class="input-group-text" id="addon-wrapping">Password :</span>
+            <input style="background-color:rgba(255,255,255,0.3);" name="pass" type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping">
+          </div><br>
+          <div class="d-grid gap-2" style="width:50%;margin:auto;">
+            <button style="width:100%" formaction="/admin-view" formmethod="POST" class="btn btn-primary" type="submit" form="admin-form"><b>Admin Login</button>
+          </div>
         </form>
       </div>
-      <div class="d-grid gap-2">
-        <button formaction="/admin-view" formmethod="POST" class="btn btn-primary" type="submit" form="admin-form"><b>Admin Login</button>
-      </div>
+
     </div>
 
 

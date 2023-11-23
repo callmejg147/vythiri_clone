@@ -15,6 +15,7 @@
         height: auto;
         overflow-x:hidden;
         display:block;
+        background-image: url('./static/images/content-bg.jpg');
       }
       .msg {
         text-align:center;
@@ -24,8 +25,8 @@
       }
     </style>
 </head>
-  <body>
-    <nav class="navbar bg-body-tertiary fixed-top" data-bs-theme="dark">
+  <body >
+    <nav class="navbar bg-body-tertiary fixed-top" data-bs-theme="dark" >
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Vythiri Resorts - Admin</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -36,7 +37,7 @@
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Reservation Requests</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
+                <div class="offcanvas-body" >
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/admin/reservation-requests">New Reservations Requests</a>
@@ -53,9 +54,11 @@
             </div>
         </div>
     </nav>
-    <div class="msg">
 
-      <h1>! No Reservations !</h1>
+
+    <div class="msg" >
+
+      <h1>No Reservations Yet!</h1>
     </div>
 
 

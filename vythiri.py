@@ -10,9 +10,9 @@ import os
 
 
 # flask settings
-#HOSTNAME = "localhost"
-#PORT = "8080"
-dom = "http://vythiri-clone.onrender.com"
+HOSTNAME = "localhost"
+PORT = "8080"
+dom = "http://"+HOSTNAME+":"+PORT
 app=Flask(__name__)
 app.debug = True
 
@@ -120,6 +120,7 @@ def privacypolicy():
 def sitemap():
     return render_template("sitemap.html", dom = dom)
 
+
 @app.route("/gallery/photo-gallery")
 def photogallery():
     return render_template("photo-gallery.html", dom = dom)
@@ -135,6 +136,9 @@ def hires():
 @app.route("/gallery/photo-gallery")
 def views():
     return render_template("360views.html", dom = dom)
+@app.route("/oreg")
+def oreg():
+    return render_template("oreg.html", dom = dom)
 
 @app.route("/reservation-request", methods = ["GET","POST"])
 def resreq():
@@ -186,13 +190,15 @@ def login():
 @app.route('/admin-view', methods = ["GET", "POST"])
 def admin():
     user = request.form.get('user')
+    print(user)
     pas = request.form.get('pass')
     pasword = hashlib.md5(pas.encode('utf-8')).hexdigest()
 
     if request.method == "POST":
         conn = sqlite3.connect('reservation.db')
         cur = conn.cursor()
-        sql = ("SELECT pass FROM admins WHERE usr LIKE "+"'"+user+"'")
+        sql = (f"SELECT pass FROM admins WHERE usr LIKE '{user}'")
+        print(sql)
         cur.execute(sql)
         usrpass = cur.fetchone()[0]
 
@@ -269,5 +275,5 @@ def viewrejected():
     conn.close()
     return render_template('rejected.html', data=data)
 if __name__ == "__main__" :
-    app.run()
+    app.run(HOSTNAME, PORT)
 
