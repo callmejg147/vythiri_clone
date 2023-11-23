@@ -79,7 +79,7 @@
         <table>
 
             <tr>
-                <th>ID</th>
+
                 <th>NAME</th>
                 <th>ADDRESS</th>
                 <th>ZIPCODE</th>
@@ -95,9 +95,10 @@
 
             </tr>
             <tr>
-                <td>{{ data [0][0] }}</td>
-                <td>{{ data[0][1]+" "+data[0][2] }}</td>
-                <td>{{ data[0][3] }}</td>
+
+                <td>{{ data[0][0]+" "+data[0][1] }}</td>
+                <td>{{ data[0][2] }}</td>
+                <td>{{ data[0][6] }}</td>
                 <td>{{ data[0][7] }}</td>
                 <td>{{ data[0][8] }}</td>
                 <td>{{ data[0][9] }}</td>
@@ -106,7 +107,6 @@
                 <td>{{ data[0][12] }}</td>
                 <td>{{ data[0][13] }}</td>
                 <td>{{ data[0][14] }}</td>
-                <td>{{ data[0][15] }}</td>
                 <td>
                     <form method="POST">
                         <div class="action-btn">
@@ -134,7 +134,7 @@
                 </tr>
             {% endif %}
             <tr>
-                <th>ID</th>
+
                 <th>NAME</th>
                 <th>ADDRESS</th>
                 <th>ZIPCODE</th>
@@ -150,9 +150,10 @@
             </tr>
             {% for row in data[1:] %}
                 <tr>
-                    <td>{{ row[0] }}</td>
-                    <td>{{ row[1]+" "+row[2] }}</td>
-                    <td>{{ row[3] }}</td>
+
+                    <td>{{ row[0]+" "+row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[6] }}</td>
                     <td>{{ row[7] }}</td>
                     <td>{{ row[8] }}</td>
                     <td>{{ row[9] }}</td>
@@ -161,7 +162,6 @@
                     <td>{{ row[12] }}</td>
                     <td>{{ row[13] }}</td>
                     <td>{{ row[14] }}</td>
-                    <td>{{ row[15] }}</td>
 
                 </tr>
             {% endfor %}

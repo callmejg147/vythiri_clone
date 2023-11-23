@@ -3,6 +3,10 @@ import hashlib
 import sqlite3
 
 
+from twilio.rest import Client
+import os
+
+
 
 
 # flask settings
@@ -162,6 +166,13 @@ def resreq():
         cur.execute(sql, (firstname,lastname,address,country,state,city,zipcode,phnum,email,roomtype,norooms,arr,dep,noadult,nochildren))
         conn.commit()
         conn.close()
+
+        # sending an email to the customer
+        os.system(f"python3 send_email.py {email}")
+
+        # send sms via sms.py
+        os.system(f"python3 sms.py {phnum}")
+
         return render_template('reservation-req.html')
 
 
@@ -211,8 +222,8 @@ def viewres():
                     conn = sqlite3.connect('reservation.db')
                     cur = conn.cursor()
                     q1 = ("INSERT INTO accepted_res (name, pnum, addr, rnum, email, rtype, adults, children, adate, ddate) VALUES (?,?,?,?,?,?,?,?,?,?)")
-                    cur.execute(q1,(row[1],row[8],row[3],row[11],row[9],row[10],row[14],row[15],row[12],row[13]))
-                    q2 = (f"DELETE FROM res_request WHERE email LIKE '{row[9]}'")
+                    cur.execute(q1,(row[0],row[7],row[2],row[10],row[8],row[9],row[13],row[14],row[11],row[12]))
+                    q2 = (f"DELETE FROM res_request WHERE email LIKE '{row[8]}'")
                     cur.execute(q2)
                     conn.commit()
                     sql = ("SELECT * FROM res_request")
@@ -224,8 +235,8 @@ def viewres():
                     conn = sqlite3.connect('reservation.db')
                     cur = conn.cursor()
                     q1 = ("INSERT INTO rejected_res (name, pnum, email) VALUES (?,?,?)")
-                    cur.execute(q1, (row[1],row[8],row[9]))
-                    q2 = (f"DELETE FROM res_request WHERE email LIKE '{row[9]}'")
+                    cur.execute(q1, (row[0],row[7],row[8]))
+                    q2 = (f"DELETE FROM res_request WHERE email LIKE '{row[8]}'")
                     cur.execute(q2)
                     conn.commit()
                     sql = ("SELECT * FROM res_request")
